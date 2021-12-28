@@ -17,37 +17,38 @@
 
   </head>
 
-  <body>
-    <nav class="no-print navbar navbar-dark bg-primary">
-      <div class="col-md-12 text-center">
-        <h3>Estimate</h3>
+  <body class="receipt">
+    <section class="sheet padding-10mm">
+      <nav class="no-print navbar navbar-dark bg-primary">
+        <div class="col-md-12 text-center">
+          <h3>Estimate</h3>
+        </div>
+      </nav>
+
+      <div class="row tablerow">
+          <table class="table table-hover" id="myTable">
+            <thead class="thead-dark">
+              <tr class="tableheader">
+                <th scope="col">आइटम*</th>
+                <th scope="col">साइज़</th>
+                <th scope="col">नग</th>
+                <th scope="col">वज़न*</th>
+                <th scope="col">रेट*</th>
+                <th scope="col">टोटल</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+           <tbody></tbody>
+          </table>
+        <div class="col"></div>
       </div>
-    </nav>
 
-    <div class="row tablerow">
-        <table class="table table-hover" id="myTable">
-          <thead class="no-print thead-dark">
-            <tr class="tableheader">
-              <th scope="col">आइटम*</th>
-              <th scope="col">साइज़</th>
-              <th scope="col">नग</th>
-              <th scope="col">वज़न*</th>
-              <th scope="col">रेट*</th>
-              <th scope="col">टोटल</th>
-              <th scope="col">Delete</th>
-            </tr>
-          </thead>
-         <tbody></tbody>
-        </table>
-      <div class="col"></div>
-    </div>
-
-    <div class="row text-center print">
-      <div class="col-md-12">
-        <button type="button" onclick="addItem()" class="btn btn-primary additem">Add Item</button>
-        <button type="button" onclick="printfn()" class="btn btn-primary">Print</button>
+      <div class="row text-center no-print">
+        <div class="col-md-12">
+          <button type="button" onclick="addItem()" class="btn btn-primary additem">Add Item</button>
+          <button type="button" onclick="printfn()" class="btn btn-primary">Print</button>
+        </div>
       </div>
-    </div>
-
+    </section>
   </body>
 </html>

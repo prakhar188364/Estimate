@@ -2,7 +2,5 @@
 
 
 #TODO
-1) I am expecting to print narrow recipt, like restaurants print for there customers.
-2) Responsive desing.
-3) clean up.
-4) print breaking when weight is in 4 or 5 digit.
+1) Responsive design.
+2) Print UI is broken (its 58mm print; input type number is not being printed; print is not formatted.).

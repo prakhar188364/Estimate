@@ -127,6 +127,17 @@ only screen and (max-width: 760px),
 
 @media print
 {
+    body.receipt
+    {
+        width: 58mm
+    }
+
+    body.receipt .sheet
+    {
+        width: 58mm;
+        height: 100mm
+    }
+
     .no-print, .no-print *
     {
         display: none !important;
@@ -134,5 +145,11 @@ only screen and (max-width: 760px),
 
     tbody input{
         border: none !important;
+        background: none !important;
+    }
+
+    table td{
+        width: 30px !important;
     }
 }
+

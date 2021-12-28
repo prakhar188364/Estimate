@@ -20,7 +20,7 @@ function addItem() {
                         </tr>`;
 
   var cell1 = `<tr class=${"insertafter"+counter}>
-                 <td><div class="autocomplete" > <input  id=${"item"+counter} type="text" data-name=${"dtname"+counter} name="myCountry" placeholder="आइटम" class="round"></div></td>
+                 <td><div class="autocomplete" > <input  id=${"item"+counter} type="text" data-name=${"dtname"+counter} name="myCountry" class="round"></div></td>
                  <td><input type="text" id=${"size"+counter} data-name=${"dtname"+counter} class="size form-control round"/></td>
                  <td><input type="number" pattern="\\d*" id=${"quantity"+counter} data-name=${"dtname"+counter} class="quantity form-control round"/></td>
                  <td><input type="number" pattern="\\d*" type="number" id=${"weight"+counter} data-name=${"dtname"+counter} class="weight form-control round"/></td>
@@ -156,7 +156,7 @@ $(document).ready(function () {
    
     setTimeout(()=>{
       var dropdownvalue = $(`${"#myTable td input#item"+ratenumber}`).val();
-      if((dropdownvalue.startsWith("RHL")) || (dropdownvalue.startsWith("H/W")) ||(dropdownvalue.startsWith("Ring"))){
+      if((dropdownvalue.startsWith("RHL")) || (dropdownvalue.startsWith("H/W"))){
         $(`${"#myTable td input#weight"+ratenumber}`).attr('disabled',true).css({'background': '#ccc'});
       }
     },100);
