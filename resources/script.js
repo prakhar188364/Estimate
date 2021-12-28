@@ -93,7 +93,7 @@ $(document).ready(function () {
     e.preventDefault();
   });
 
- $(document.body).on('blur', "#fare", function (e) {
+ $(document.body).on('blur', "#fare, table td", function (e) {
     var grandTotalAmt1 = grandTotalAmt(grandTotal);
     var fareamount = grandTotalAmt1+ Number($('#fare').val());
     $("#netAmount").val(fareamount.toFixed(2));
