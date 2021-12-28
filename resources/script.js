@@ -7,26 +7,26 @@ function addItem() {
                             <td></td>
                             <td></td>
                             <td>भाड़ा</td>
-                            <td><input type="number" pattern="\\d*" id="fare" class="form-control" /></td>
+                            <td><input type="number" pattern="\\d*" id="fare" class="form-control round" /></td>
                             <td></td>
                         </tr>
                         <tr class="table table-success">
                             <th></th>
                             <th></th>
                             <th>कुल वज़न</th>
-                            <th><input type="number" id="netWeight" class="form-control" disabled/></th>
-                            <th>कुल राशि</th><th class="netamountth"><input type="number" id="netAmount" class="form-control netAmount" disabled/></th>
+                            <th><input type="number" id="netWeight" class="form-control round" disabled/></th>
+                            <th>कुल राशि</th><th class="netamountth"><input type="number" id="netAmount" class="form-control netAmount round" disabled/></th>
                             <th></th>
                         </tr>`;
 
   var cell1 = `<tr class=${"insertafter"+counter}>
-                 <td><div class="autocomplete" > <input  id=${"item"+counter} type="text" data-name=${"dtname"+counter} name="myCountry" placeholder="आइटम"></div></td>
-                 <td><input type="text" id=${"size"+counter} class="size" data-name=${"dtname"+counter} class="form-control round"/></td>
-                 <td><input type="number" pattern="\\d*" id=${"quantity"+counter} class="quantity" data-name=${"dtname"+counter} class="form-control round"/></td>
-                 <td><input type="number" pattern="\\d*" type="number" id=${"weight"+counter}  class="weight" data-name=${"dtname"+counter} class="form-control round"/></td>
-                 <td> <input type="number" pattern="\\d*" type="number" id=${"rate"+counter} class="rate" data-name=${"dtname"+counter} class="form-control round"/></td>
-                 <td class="totalcol"><input type="number" id=${"total"+counter}  class="total" data-name=${"dtname"+counter} class="form-control round" disabled/></td>
-                 <td class="print"><button type=\"button\"  class=\"btn btn-danger delItemrow\" data-name=${counter}>Delete</button></div><div></td> 
+                 <td><div class="autocomplete" > <input  id=${"item"+counter} type="text" data-name=${"dtname"+counter} name="myCountry" placeholder="आइटम" class="round"></div></td>
+                 <td><input type="text" id=${"size"+counter} data-name=${"dtname"+counter} class="no-print size form-control round"/></td>
+                 <td><input type="number" pattern="\\d*" id=${"quantity"+counter} data-name=${"dtname"+counter} class="quantity form-control round"/></td>
+                 <td><input type="number" pattern="\\d*" type="number" id=${"weight"+counter} data-name=${"dtname"+counter} class="weight form-control round"/></td>
+                 <td> <input type="number" pattern="\\d*" type="number" id=${"rate"+counter}  data-name=${"dtname"+counter} class="rate form-control round"/></td>
+                 <td class="totalcol"><input type="number" id=${"total"+counter} data-name=${"dtname"+counter} class="total form-control round" disabled/></td>
+                 <td class="print"><button type=\"button\"  class="no-print btn btn-danger delItemrow" data-name=${counter}>Delete</button></div><div></td> 
                </tr>`;
 
   $(".lastItem,.table-success").remove();
@@ -58,7 +58,6 @@ function printfn() {
   $(".print").hide();
   window.print();
   $(".print").show();
-
 }
 
 function netEstimate() {
@@ -156,7 +155,8 @@ $(document).ready(function () {
     $(`${"#myTable td input#weight"+ratenumber}`).removeAttr('disabled').css({'background': '#fff'});
    
     setTimeout(()=>{
-      if($(`${"#myTable td input#item"+ratenumber}`).val().startsWith("RHL")){
+      var dropdownvalue = $(`${"#myTable td input#item"+ratenumber}`).val();
+      if((dropdownvalue.startsWith("RHL")) || (dropdownvalue.startsWith("H/W")) ||(dropdownvalue.startsWith("Ring"))){
         $(`${"#myTable td input#weight"+ratenumber}`).attr('disabled',true).css({'background': '#ccc'});
       }
     },100);
