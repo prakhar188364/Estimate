@@ -44,7 +44,6 @@ nav h3 {
   border-top-left-radius:15px;
    }
 
-* { box-sizing: border-box; }
 body {
   font: 16px Arial;
 }
@@ -54,7 +53,14 @@ body {
   display: inline-block;
 }
 
-input {
+/* .autocomplete > input {
+  border: 1px solid #CCC;
+  background-color: #fff;
+  padding: 10px;
+  font-size: 16px;
+} */
+
+/* input {
   border: 1px solid #CCC;
   background-color: #fff;
   padding: 10px;
@@ -63,7 +69,7 @@ input {
 input[type=submit] {
   background-color: DodgerBlue;
   color: #fff;
-}
+} */
 .autocomplete-items {
   position: absolute;
   border: 1px solid #d4d4d4;
@@ -100,39 +106,19 @@ input[type=submit] {
     text-align: center;
 }
 
-.tablerow{
-    margin: 1% !important;
-    width:100%;
-}
-
-.netamountth input {
-    width: 148px;
-}
-
-
-@media
-only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px)  {
-   body{
-       width :750px !important;
-   }
-    .navbar{
-        width: 125%;
-    }
-
-    .quantity,.weight,.rate,.total,.size{
-        width: 100px;
-    }
+.quantity, .weight, .rate, .total, #fare, #netWeight, #netAmount {
+  text-align: right;
 }
 
 @media print
 {
+  
     body.receipt
     {
         width: 58mm
     }
 
-    body.receipt .sheet
+    body.receipt.sheet
     {
         width: 58mm;
         height: 100mm
@@ -143,13 +129,27 @@ only screen and (max-width: 760px),
         display: none !important;
     }
 
+    table {
+      width: 100%;
+    }
+
     tbody input{
         border: none !important;
         background: none !important;
     }
 
     table td{
-        width: 30px !important;
+        width: 40px !important;
     }
 }
+
+/* @media print {
+    body { font-size: 8px }
+  }
+  @media screen {
+    body { font-size: 8px }
+  }
+  @media screen, print {
+    body { line-height: 1.2 }
+  } */
 
