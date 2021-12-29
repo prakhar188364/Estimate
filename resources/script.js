@@ -55,9 +55,35 @@ function grandTotalwight(totalweightitem) {
 }
 
 function printfn() {
-  $(".print").hide();
-  window.print();
-  $(".print").show();
+
+    var netWeight = $("#netWeight").val();
+    var netAmount = $("#netAmount").val();
+    var netfare = $("#fare").val();
+    var mywindow = window.open('', 'PRINT', 'height=400,width=600');
+    mywindow.document.write('<html><head><title>' + document.title  + '</title>');
+    mywindow.document.write('</head><body >');
+    mywindow.document.write('<div class="container">');
+    mywindow.document.write('<div class="row"><div class="col-sm-3">आइटम</div><div class="col-sm-1">साइज़</div><div class="col-sm-1">नग</div><div class="col-sm-2">वज़न</div><div class="col-sm-2">रेट</div><div class="col-sm-3">टोटल</div></div>');
+
+
+    /*dynamic content of table need to be added.
+     don't want to open separate window for print.
+     rows are coming one after another not in tabular format.
+     created temporary page Print.html for print html.*/
+
+
+    mywindow.document.write('<div class="row"><div class="col-sm-3"></div><div class="col-sm-1"></div><div class="col-sm-1"></div><div class="col-sm-2"></div><div class="col-sm-2">भाड़ा</div><div class="col-sm-3">'+netfare+'</div></div>');
+    mywindow.document.write('<div class="row"><div class="col-sm-3"></div><div class="col-sm-1"></div><div class="col-sm-1">कुल वज़न</div><div class="col-sm-2">'+netWeight+'</div><div class="col-sm-2">कुल राशि</div><div class="col-sm-3">'+netAmount+'</div></div>');
+    mywindow.document.write('<div>');
+    mywindow.document.write('</body></html>');
+
+    mywindow.document.close(); // necessary for IE >= 10
+    mywindow.focus(); // necessary for IE >= 10*/
+
+    mywindow.print();
+    mywindow.close();
+
+    return true;
 }
 
 function netEstimate() {
