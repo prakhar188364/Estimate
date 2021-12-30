@@ -98,13 +98,13 @@ body {
   
     body.receipt
     {
-        width: 58mm
+        width: 80mm
     }
 
     body.receipt.sheet
     {
-        width: 58mm;
-        height: 100mm
+        width: 80mm;
+        height: 120mm
     }
 
     .no-print, .no-print *

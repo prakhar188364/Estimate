@@ -56,14 +56,22 @@ function grandTotalwight(totalweightitem) {
 
 function printfn() {
 
+
     var netWeight = $("#netWeight").val();
     var netAmount = $("#netAmount").val();
     var netfare = $("#fare").val();
     var mywindow = window.open('', 'PRINT', 'height=400,width=600');
     mywindow.document.write('<html><head></head>');
-    mywindow.document.write('<body>');
+    mywindow.document.write('<body style="font-size: 11px; font-weight: bold;width: 80mm">');
     mywindow.document.write('<div>');
-    mywindow.document.write('<div><span style="display: inline-block;width:28%">आइटम</span><span style="display: inline-block;width:15%">साइज़</span><span style="display: inline-block;width:8%">नग</span><span style="display: inline-block;width:15%">वज़न</span><span style="display: inline-block;width:15%">रेट</span><span style="display: inline-block;width:19%">टोटल</span></div>');
+    mywindow.document.write('<div>' +
+        '<span style="display: inline-block;width:25%">आइटम</span>' +
+        '<span style="display: inline-block;width:15%">साइज़</span>' +
+        '<span style="display: inline-block;width:8%">नग</span>' +
+        '<span style="display: inline-block;width:18%">वज़न</span>' +
+        '<span style="display: inline-block;width:15%">रेट</span>' +
+        '<span style="display: inline-block;width:19%">टोटल</span>' +
+        '</div>');
 
     var rowSize= $("tbody tr").length - 2;
     for(var i=0;i<rowSize;i++){
@@ -73,16 +81,23 @@ function printfn() {
       }else{
         count = i+3;
       }
-      mywindow.document.write('<div style="margin-top: 20px"><span style="display: inline-block;width:28%"">'+$(".insertafter"+count+ " td:nth-child(1) input").val()+'</span><span style="display: inline-block;width:15%">'+$(".insertafter"+count+ " td:nth-child(2) input").val()+'</span><span style="display: inline-block;width:8%">'+$(".insertafter"+count+ " td:nth-child(3) input").val()+'</span><span style="display: inline-block;width:15%">'+$(".insertafter"+count+ " td:nth-child(4) input").val()+'</span><span style="display: inline-block;width:15%">'+$(".insertafter"+count+ " td:nth-child(5) input").val()+'</span><span style="display: inline-block;width:19%">'+$(".insertafter"+count+ " td:nth-child(6) input").val()+'</span></div>');
+      mywindow.document.write('<div style="margin-top: 10px">' +
+          '<span style="display: inline-block;width:25%"">'+$(".insertafter"+count+ " td:nth-child(1) input").val()+'</span>' +
+          '<span style="display: inline-block;width:15%">'+$(".insertafter"+count+ " td:nth-child(2) input").val()+'</span>' +
+          '<span style="display: inline-block;width:8%">'+$(".insertafter"+count+ " td:nth-child(3) input").val()+'</span>' +
+          '<span style="display: inline-block;width:18%">'+$(".insertafter"+count+ " td:nth-child(4) input").val()+'</span>' +
+          '<span style="display: inline-block;width:15%">'+$(".insertafter"+count+ " td:nth-child(5) input").val()+'</span>' +
+          '<span style="display: inline-block;width:19%">'+$(".insertafter"+count+ " td:nth-child(6) input").val()+'</span>' +
+          '</div>');
     }
 
-    mywindow.document.write('<div style="margin-top: 20px"><span>भाड़ा</span><span style="margin-left: 5%">'+netfare+'</span></div>');
-    mywindow.document.write('<div style="margin-top: 20px"><span>कुल वज़न</span><span style="margin-left: 4%">'+netWeight+'</span><span style="margin-left: 4%">कुल राशि</span><span style="margin-left: 4%">'+netAmount+'</span></div>');
+    mywindow.document.write('<div style="margin-top: 10px"><span>भाड़ा</span><span style="margin-left: 5%">'+netfare+'</span></div>');
+    mywindow.document.write('<div style="margin-top: 10px"><span>कुल वज़न</span><span style="margin-left: 4%">'+netWeight+'</span><span style="margin-left: 4%">कुल राशि</span><span style="margin-left: 4%">'+netAmount+'</span></div>');
     mywindow.document.write('<div>');
     mywindow.document.write('</body></html>');
 
     mywindow.document.close(); // necessary for IE >= 10
-    mywindow.focus(); // necessary for IE >= 10*/
+    mywindow.focus(); // necessary for IE >= 10*!/
 
     mywindow.print();
     mywindow.close();
