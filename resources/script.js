@@ -54,8 +54,8 @@ function grandTotalwight(totalweightitem) {
     return totalweightitem1;
 }
 
-function printfn() {
 
+function printfn() {
 
     var netWeight = $("#netWeight").val();
     var netAmount = $("#netAmount").val();
@@ -165,7 +165,6 @@ $(document).ready(function () {
 
     });
 
-    /// in rate  operation
     $(document.body).on('blur', "#myTable td input.rate", function (e) {
         var txt = $(this).attr('data-name');
         var ratenumber = txt.match(/\d/g)[0];
@@ -222,9 +221,7 @@ $(document).ready(function () {
         if ($(`${"#myTable td input#total" + quantity}`).val() > 0) {
             $(".additem").removeAttr('disabled');
         }
-
         e.preventDefault();
-
     });
 
 });

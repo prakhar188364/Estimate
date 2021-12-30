@@ -6,28 +6,16 @@ nav h3 {
     color: #fff;
 }
 
-
-/* Create three equal columns that floats next to each other */
-.column {
-    float: left;
-    width: 50%;
-    padding: 10px;
-    height: 300px; /* Should be removed. Only for demonstration */
-}
-
-/* Clear floats after the columns */
 .row:after {
     content: "";
     display: table;
     clear: both;
 }
 
-
 .tableheader th {
     color: #625d5d;
     font-size: 1.5em;
 }
-
 
 .round {
     border-bottom-right-radius: 15px;
@@ -36,7 +24,6 @@ nav h3 {
     -moz-border-radius-bottomleft: 15px;
     -webkit-border-bottom-right-radius: 15px;
     -webkit-border-bottom-left-radius: 15px;
-
     -moz-border-radius-topright: 15px;
     -moz-border-radius-topleft: 15px;
     -webkit-border-top-right-radius: 15px;
@@ -96,33 +83,4 @@ body {
 
 .quantity, .weight, .rate, .total, #fare, #netWeight, #netAmount {
     text-align: right;
-}
-
-@media print {
-
-    body.receipt {
-        width: 80mm
-    }
-
-    body.receipt.sheet {
-        width: 80mm;
-        height: 120mm
-    }
-
-    .no-print, .no-print * {
-        display: none !important;
-    }
-
-    table {
-        width: 100%;
-    }
-
-    tbody input {
-        border: none !important;
-        background: none !important;
-    }
-
-    table td {
-        width: 40px !important;
-    }
 }
