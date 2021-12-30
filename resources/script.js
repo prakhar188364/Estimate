@@ -1,3 +1,8 @@
+window.addEventListener('load', function () {
+    addItem();
+    console.log("All item loaded");
+});
+
 function addItem() {
     var counter = $("#myTable tr").length;
 
@@ -37,82 +42,6 @@ function addItem() {
     }
 
     autocomplete(document.getElementById(`${"item" + counter}`), varity);
-}
-
-function grandTotalAmt(grandTotal) {
-    var totalwithoutfilter = grandTotal;
-    var grandTotalAmt = totalwithoutfilter.filter(col => col);
-    grandTotalAmt = grandTotalAmt.reduce((a, b) => Number(a) + Number(b), 0);
-    return grandTotalAmt;
-}
-
-
-function grandTotalwight(totalweightitem) {
-    var totalwithoutfilter = totalweightitem;
-    var totalweightitem1 = totalwithoutfilter.filter(col => col);
-    totalweightitem1 = totalweightitem1.reduce((a, b) => Number(a) + Number(b), 0);
-    return totalweightitem1;
-}
-
-
-function printfn() {
-
-    var netWeight = $("#netWeight").val();
-    var netAmount = $("#netAmount").val();
-    var netfare = $("#fare").val();
-    var mywindow = window.open('', 'PRINT', 'height=400,width=600');
-    mywindow.document.write('<html><head></head>');
-    mywindow.document.write('<body style="font-size: 11px; font-weight: bold;width: 80mm">');
-    mywindow.document.write('<div>');
-    mywindow.document.write('<div>' +
-        '<span style="display: inline-block;width:25%">आइटम</span>' +
-        '<span style="display: inline-block;width:15%">साइज़</span>' +
-        '<span style="display: inline-block;width:8%">नग</span>' +
-        '<span style="display: inline-block;width:18%">वज़न</span>' +
-        '<span style="display: inline-block;width:15%">रेट</span>' +
-        '<span style="display: inline-block;width:19%">टोटल</span>' +
-        '</div>');
-
-    var rowSize = $("tbody tr").length - 2;
-    for (var i = 0; i < rowSize; i++) {
-        var count = 0;
-        if (i == 0) {
-            count = i + 1;
-        } else {
-            count = i + 3;
-        }
-        mywindow.document.write('<div style="margin-top: 10px">' +
-            '<span style="display: inline-block;width:25%"">' + $(".insertafter" + count + " td:nth-child(1) input").val() + '</span>' +
-            '<span style="display: inline-block;width:15%">' + $(".insertafter" + count + " td:nth-child(2) input").val() + '</span>' +
-            '<span style="display: inline-block;width:8%">' + $(".insertafter" + count + " td:nth-child(3) input").val() + '</span>' +
-            '<span style="display: inline-block;width:18%">' + $(".insertafter" + count + " td:nth-child(4) input").val() + '</span>' +
-            '<span style="display: inline-block;width:15%">' + $(".insertafter" + count + " td:nth-child(5) input").val() + '</span>' +
-            '<span style="display: inline-block;width:19%">' + $(".insertafter" + count + " td:nth-child(6) input").val() + '</span>' +
-            '</div>');
-    }
-
-    mywindow.document.write('<div style="margin-top: 10px"><span>भाड़ा</span><span style="margin-left: 5%">' + netfare + '</span></div>');
-    mywindow.document.write('<div style="margin-top: 10px"><span>कुल वज़न</span><span style="margin-left: 4%">' + netWeight + '</span><span style="margin-left: 4%">कुल राशि</span><span style="margin-left: 4%">' + netAmount + '</span></div>');
-    mywindow.document.write('<div>');
-    mywindow.document.write('</body></html>');
-
-    mywindow.document.close(); // necessary for IE >= 10
-    mywindow.focus(); // necessary for IE >= 10*!/
-
-    mywindow.print();
-    mywindow.close();
-
-    return true;
-}
-
-function netEstimate() {
-    $("table").change(function () {
-        var theTotal = 0;
-        $("td:nth-child(4)").each(function () {
-            var val = $(this).text();
-            theTotal += parseInt(val);
-        });
-    });
 }
 
 
@@ -226,8 +155,78 @@ $(document).ready(function () {
 
 });
 
-window.addEventListener('load', function () {
-    addItem();
-    console.log("All item loaded");
-});
+function grandTotalAmt(grandTotal) {
+    var totalwithoutfilter = grandTotal;
+    var grandTotalAmt = totalwithoutfilter.filter(col => col);
+    grandTotalAmt = grandTotalAmt.reduce((a, b) => Number(a) + Number(b), 0);
+    return grandTotalAmt;
+}
+
+
+function grandTotalwight(totalweightitem) {
+    var totalwithoutfilter = totalweightitem;
+    var totalweightitem1 = totalwithoutfilter.filter(col => col);
+    totalweightitem1 = totalweightitem1.reduce((a, b) => Number(a) + Number(b), 0);
+    return totalweightitem1;
+}
+
+function netEstimate() {
+    $("table").change(function () {
+        var theTotal = 0;
+        $("td:nth-child(4)").each(function () {
+            var val = $(this).text();
+            theTotal += parseInt(val);
+        });
+    });
+}
+
+function printfn() {
+
+    var netWeight = $("#netWeight").val();
+    var netAmount = $("#netAmount").val();
+    var netfare = $("#fare").val();
+    var mywindow = window.open('', 'PRINT', 'height=400,width=600');
+    mywindow.document.write('<html><head></head>');
+    mywindow.document.write('<body style="font-size: 11px; font-weight: bold;width: 80mm">');
+    mywindow.document.write('<div>');
+    mywindow.document.write('<div>' +
+        '<span style="display: inline-block;width:25%">आइटम</span>' +
+        '<span style="display: inline-block;width:15%">साइज़</span>' +
+        '<span style="display: inline-block;width:8%">नग</span>' +
+        '<span style="display: inline-block;width:18%">वज़न</span>' +
+        '<span style="display: inline-block;width:15%">रेट</span>' +
+        '<span style="display: inline-block;width:19%">टोटल</span>' +
+        '</div>');
+
+    var rowSize = $("tbody tr").length - 2;
+    for (var i = 0; i < rowSize; i++) {
+        var count = 0;
+        if (i == 0) {
+            count = i + 1;
+        } else {
+            count = i + 3;
+        }
+        mywindow.document.write('<div style="margin-top: 10px">' +
+            '<span style="display: inline-block;width:25%"">' + $(".insertafter" + count + " td:nth-child(1) input").val() + '</span>' +
+            '<span style="display: inline-block;width:15%">' + $(".insertafter" + count + " td:nth-child(2) input").val() + '</span>' +
+            '<span style="display: inline-block;width:8%">' + $(".insertafter" + count + " td:nth-child(3) input").val() + '</span>' +
+            '<span style="display: inline-block;width:18%">' + $(".insertafter" + count + " td:nth-child(4) input").val() + '</span>' +
+            '<span style="display: inline-block;width:15%">' + $(".insertafter" + count + " td:nth-child(5) input").val() + '</span>' +
+            '<span style="display: inline-block;width:19%">' + $(".insertafter" + count + " td:nth-child(6) input").val() + '</span>' +
+            '</div>');
+    }
+
+    mywindow.document.write('<div style="margin-top: 10px"><span>भाड़ा</span><span style="margin-left: 5%">' + netfare + '</span></div>');
+    mywindow.document.write('<div style="margin-top: 10px"><span>कुल वज़न</span><span style="margin-left: 4%">' + netWeight + '</span><span style="margin-left: 4%">कुल राशि</span><span style="margin-left: 4%">' + netAmount + '</span></div>');
+    mywindow.document.write('<div>');
+    mywindow.document.write('</body></html>');
+
+    mywindow.document.close(); // necessary for IE >= 10
+    mywindow.focus(); // necessary for IE >= 10*!/
+
+    mywindow.print();
+    mywindow.close();
+
+    return true;
+}
 
