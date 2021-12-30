@@ -53,23 +53,6 @@ body {
   display: inline-block;
 }
 
-/* .autocomplete > input {
-  border: 1px solid #CCC;
-  background-color: #fff;
-  padding: 10px;
-  font-size: 16px;
-} */
-
-/* input {
-  border: 1px solid #CCC;
-  background-color: #fff;
-  padding: 10px;
-  font-size: 16px;
-}
-input[type=submit] {
-  background-color: DodgerBlue;
-  color: #fff;
-} */
 .autocomplete-items {
   position: absolute;
   border: 1px solid #d4d4d4;
@@ -142,14 +125,3 @@ input[type=submit] {
         width: 40px !important;
     }
 }
-
-/* @media print {
-    body { font-size: 8px }
-  }
-  @media screen {
-    body { font-size: 8px }
-  }
-  @media screen, print {
-    body { line-height: 1.2 }
-  } */
-

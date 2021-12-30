@@ -60,20 +60,24 @@ function printfn() {
     var netAmount = $("#netAmount").val();
     var netfare = $("#fare").val();
     var mywindow = window.open('', 'PRINT', 'height=400,width=600');
-    mywindow.document.write('<html><head><title>' + document.title  + '</title>');
-    mywindow.document.write('</head><body >');
-    mywindow.document.write('<div class="container">');
-    mywindow.document.write('<div class="row"><div class="col-sm-3">आइटम</div><div class="col-sm-1">साइज़</div><div class="col-sm-1">नग</div><div class="col-sm-2">वज़न</div><div class="col-sm-2">रेट</div><div class="col-sm-3">टोटल</div></div>');
+    mywindow.document.write('<html><head></head>');
+    mywindow.document.write('<body>');
+    mywindow.document.write('<div>');
+    mywindow.document.write('<div><span style="display: inline-block;width:28%">आइटम</span><span style="display: inline-block;width:15%">साइज़</span><span style="display: inline-block;width:8%">नग</span><span style="display: inline-block;width:15%">वज़न</span><span style="display: inline-block;width:15%">रेट</span><span style="display: inline-block;width:19%">टोटल</span></div>');
 
+    var rowSize= $("tbody tr").length - 2;
+    for(var i=0;i<rowSize;i++){
+      var count = 0;
+      if(i==0){
+        count = i+1;
+      }else{
+        count = i+3;
+      }
+      mywindow.document.write('<div style="margin-top: 20px"><span style="display: inline-block;width:28%"">'+$(".insertafter"+count+ " td:nth-child(1) input").val()+'</span><span style="display: inline-block;width:15%">'+$(".insertafter"+count+ " td:nth-child(2) input").val()+'</span><span style="display: inline-block;width:8%">'+$(".insertafter"+count+ " td:nth-child(3) input").val()+'</span><span style="display: inline-block;width:15%">'+$(".insertafter"+count+ " td:nth-child(4) input").val()+'</span><span style="display: inline-block;width:15%">'+$(".insertafter"+count+ " td:nth-child(5) input").val()+'</span><span style="display: inline-block;width:19%">'+$(".insertafter"+count+ " td:nth-child(6) input").val()+'</span></div>');
+    }
 
-    /*dynamic content of table need to be added.
-     don't want to open separate window for print.
-     rows are coming one after another not in tabular format.
-     created temporary page Print.html for print html.*/
-
-
-    mywindow.document.write('<div class="row"><div class="col-sm-3"></div><div class="col-sm-1"></div><div class="col-sm-1"></div><div class="col-sm-2"></div><div class="col-sm-2">भाड़ा</div><div class="col-sm-3">'+netfare+'</div></div>');
-    mywindow.document.write('<div class="row"><div class="col-sm-3"></div><div class="col-sm-1"></div><div class="col-sm-1">कुल वज़न</div><div class="col-sm-2">'+netWeight+'</div><div class="col-sm-2">कुल राशि</div><div class="col-sm-3">'+netAmount+'</div></div>');
+    mywindow.document.write('<div style="margin-top: 20px"><span>भाड़ा</span><span style="margin-left: 5%">'+netfare+'</span></div>');
+    mywindow.document.write('<div style="margin-top: 20px"><span>कुल वज़न</span><span style="margin-left: 4%">'+netWeight+'</span><span style="margin-left: 4%">कुल राशि</span><span style="margin-left: 4%">'+netAmount+'</span></div>');
     mywindow.document.write('<div>');
     mywindow.document.write('</body></html>');
 
