@@ -64,4 +64,4 @@ var varity = [
     "Jaali",
     "H/W 202",
     "H/W 304"
-  ];
+];
