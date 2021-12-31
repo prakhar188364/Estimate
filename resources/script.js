@@ -34,9 +34,17 @@ function addItem() {
                  <td class="print"><button type=\"button\"  class="no-print btn btn-danger delItemrow" data-name=${counter}>Delete</button></div><div></td> 
                </tr>`;
 
-    $(".lastItem,.table-success").remove();
-    $("#myTable tbody").append(cell1).append(lastitemappend);
+
+    //$(".lastItem,.table-success").remove();
+
+    if($(".lastItem").length==0){
+        $("#myTable tbody").append(cell1).append(lastitemappend);
+    }else{
+        $(cell1).insertBefore( ".lastItem");
+    }
     $(".additem").attr("disabled", true);
+
+    //??
     if ($("#myTable tbody tr").length === 2) {
         $(".additem").removeAttr('disabled');
     }
