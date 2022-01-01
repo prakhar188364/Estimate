@@ -173,7 +173,6 @@ function printfn() {
     return true;
 }
 
-
 function commaSeperated(netNumber) {
     return new Intl.NumberFormat('en-IN', {maximumSignificantDigits: 10}).format(netNumber);
 }
