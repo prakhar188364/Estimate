@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7aa45b78-62e0-4eed-8eb4-c9e531ee79c0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyEstimate.html" beforeDir="false" afterPath="$PROJECT_DIR$/MyEstimate.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/script.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -19,17 +20,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="597">
-              <caret line="120" column="24" selection-start-line="120" selection-start-column="24" selection-end-line="120" selection-end-column="24" />
+            <state relative-caret-position="2085">
+              <caret line="139" column="56" lean-forward="true" selection-start-line="139" selection-start-column="56" selection-end-line="139" selection-end-column="56" />
               <folding>
-                <element signature="n#style#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#2;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#3;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#4;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#5;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#body#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#2;n#div#0;n#!!top" expanded="true" />
@@ -47,6 +48,15 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MyEstimate.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="735">
+              <caret line="49" column="47" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -57,6 +67,9 @@
       <find>maintbl</find>
       <find>container</find>
       <find>column</find>
+      <find>addItem(</find>
+      <find>addItem</find>
+      <find>insertafter</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -73,14 +86,14 @@
       <list>
         <option value="$PROJECT_DIR$/resources/item.js" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/MyEstimate.html" />
         <option value="$PROJECT_DIR$/resources/design.css" />
         <option value="$PROJECT_DIR$/resources/autocomplete.js" />
+        <option value="$PROJECT_DIR$/MyEstimate.html" />
         <option value="$PROJECT_DIR$/resources/script.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -90,7 +103,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -107,6 +119,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -154,12 +167,19 @@
       <workItem from="1641015543152" duration="1654000" />
       <workItem from="1641017358691" duration="1715000" />
       <workItem from="1641019362959" duration="1585000" />
-      <workItem from="1641021452824" duration="189000" />
+      <workItem from="1641021452824" duration="897000" />
+      <workItem from="1641023259687" duration="1535000" />
+      <workItem from="1641056630234" duration="1475000" />
+      <workItem from="1641058734702" duration="1605000" />
+      <workItem from="1641060579786" duration="1634000" />
+      <workItem from="1641062397733" duration="1523000" />
+      <workItem from="1641064210638" duration="1523000" />
+      <workItem from="1641066018127" duration="1471000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17611000" />
+    <option name="totallyTimeSpent" value="29085000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -227,13 +247,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/autocomplete.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="66" column="9" lean-forward="true" selection-end-line="103" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/design.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -241,26 +254,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MyEstimate.html">
+    <entry file="file://$PROJECT_DIR$/resources/autocomplete.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+        <state>
+          <caret column="9" selection-start-column="9" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="597">
-          <caret line="120" column="24" selection-start-line="120" selection-start-column="24" selection-end-line="120" selection-end-column="24" />
+        <state relative-caret-position="2085">
+          <caret line="139" column="56" lean-forward="true" selection-start-line="139" selection-start-column="56" selection-end-line="139" selection-end-column="56" />
           <folding>
-            <element signature="n#style#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#4;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#5;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#2;n#div#0;n#!!top" expanded="true" />
@@ -274,6 +287,13 @@
             <element signature="n#style#0;n#span#2;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#3;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyEstimate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="49" column="47" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
         </state>
       </provider>
     </entry>

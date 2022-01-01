@@ -5,11 +5,8 @@ window.addEventListener('load', function () {
 
 function addItem() {
 
-    var counter = $("#myTable tr").length;
-
-    if ($("#myTable tbody").find(".lastItem").length > 0) {
-        counter = counter - 2;
-    }
+    var counter = new Date().getMilliseconds() ;
+    counter =counter++;
 
     var lastitemappend = `<tr class="lastItem">
                             <td></td>
@@ -29,8 +26,8 @@ function addItem() {
                             <th></th>
                         </tr>`;
 
-    var cell1 = `<tr class=${"insertafter" + counter}>
-                 <td><div class="autocomplete" > <input  id=${"item" + counter} type="text" data-name=${"dtname" + counter} name="myCountry" class="form-control round"></div></td>
+    var cell1 = `<tr class=${"insertafter" + counter} data-name=${"item" + counter}>
+                 <td><div class="autocomplete"> <input  id='${"item" + counter}' type="text" data-name=${"dtname" + counter} name="myCountry" class="form-control round"></div></td>
                  <td><input type="text" id=${"size" + counter} data-name=${"dtname" + counter} class="size form-control round"/></td>
                  <td><input type="number"  id=${"quantity" + counter} data-name=${"dtname" + counter} class="quantity form-control round"/></td>
                  <td><input type="number" pattern="\\d*" type="number" id=${"weight" + counter} data-name=${"dtname" + counter} class="weight form-control round" value=0/></td>
@@ -47,7 +44,9 @@ function addItem() {
 
     $(".additem").attr("disabled", true);
 
-    autocomplete(document.getElementById(`${"item" + counter}`), varity);
+    autocomplete(document.getElementById(`${"item"+counter}`), varity);
+
+
 }
 
 
@@ -61,22 +60,27 @@ $(document).ready(function () {
         e.preventDefault();
     });
 
+
     $(document.body).on('blur', ".autocomplete input", function (e) {
         var txt = $(this).attr('data-name');
-        var rowNumber = txt.match(/\d/g)[0];
+        var rowNumber = txt.replace(/[^0-9]/g,'');
         $(`${"#myTable td input#weight" + rowNumber}`).removeAttr('disabled').css({'background': '#fff'});
 
         setTimeout(() => {
             var dropdownvalue = $(`${"#myTable td input#item" + rowNumber}`).val();
-            if ((dropdownvalue.startsWith("RHL")) || (dropdownvalue.startsWith("H/W"))) {
-                $(`${"#myTable td input#weight" + rowNumber}`).attr('disabled', true).css({'background': '#ccc'});
+
+            if(dropdownvalue !== undefined){
+                if ((dropdownvalue.startsWith("RHL")) || (dropdownvalue.startsWith("H/W"))) {
+                    $(`${"#myTable td input#weight" + rowNumber}`).attr('disabled', true).css({'background': '#ccc'});
+                }
             }
+
         }, 100);
 
         e.preventDefault();
     });
 
-    $(document.body).on('blur', "table tr", function (e) {
+    $(document.body).on('change', "table tr", function (e) {
 
         if (!$(this).hasClass("lastItem")) {
             var currentItem = $(this).find("td:nth-child(1) input").val();
@@ -88,7 +92,7 @@ $(document).ready(function () {
             if (currentItem.startsWith("RHL") || currentItem.startsWith("H/W")) {
                 rowTotal = currentQuantity * currentRate;
             } else {
-                rowTotal = currentWeight * currentRate;
+                    rowTotal = currentWeight * currentRate;
             }
             $(this).find(".total").val(rowTotal.toFixed(2));
             $("#netAmount").val(grandTotalAmount());
@@ -129,8 +133,28 @@ function printfn() {
     var netWeight = $("#netWeight").val();
     var netAmount = $("#netAmount").val();
     var netfare = $("#fare").val();
+    var tablehtml='';
+    var rowSize = $('#myTable tbody tr').length - 2;
+
+    for (var i = 0; i < rowSize; i++) {
+        var count = $('#myTable tbody tr')[i].className;
+        tablehtml = tablehtml + '<div style="margin-top: 10px;border-top: 1px solid black">' +
+            '<span style="display: inline-block;width:25%;text-align: left">' + $("."+count + " td:nth-child(1) input").val() + '</span>' +
+            '<span style="display: inline-block;width:15%;text-align: center">' + $("."+count + " td:nth-child(2) input").val() + '</span>' +
+            '<span style="display: inline-block;width:8%;text-align: center">' + $("."+count + " td:nth-child(3) input").val() + '</span>' +
+            '<span style="display: inline-block;width:18%;text-align: center">' + $("."+count + " td:nth-child(4) input").val() + '</span>' +
+            '<span style="display: inline-block;width:15%;text-align: center">' + $("."+count + " td:nth-child(5) input").val() + '</span>' +
+            '<span style="display: inline-block;width:19%;text-align: right">' + commaSeperated($("."+count + " td:nth-child(6) input").val()) + '</span>' +
+            '</div>';
+    }
+
+
+
+
     var mywindow = window.open('', 'PRINT', 'height=400,width=600');
+
     mywindow.document.write('<html><head></head>');
+
     mywindow.document.write('<body style="font-size: 12px; font-weight: bold;width: 71mm">');
     mywindow.document.write('<div>');
     mywindow.document.write('<div>' +
@@ -141,20 +165,9 @@ function printfn() {
         '<span style="display: inline-block;width:15%;text-align: center">रेट</span>' +
         '<span style="display: inline-block;width:19%;text-align: right">टोटल</span>' +
         '</div>');
+    mywindow.document.write(tablehtml);
 
-    var rowSize = $("tbody tr").length - 2;
-    for (var i = 0; i < rowSize; i++) {
-        var count = i + 1;
 
-        mywindow.document.write('<div style="margin-top: 10px;border-top: 1px solid black">' +
-            '<span style="display: inline-block;width:25%;text-align: left">' + $(".insertafter" + count + " td:nth-child(1) input").val() + '</span>' +
-            '<span style="display: inline-block;width:15%;text-align: center">' + $(".insertafter" + count + " td:nth-child(2) input").val() + '</span>' +
-            '<span style="display: inline-block;width:8%;text-align: center">' + $(".insertafter" + count + " td:nth-child(3) input").val() + '</span>' +
-            '<span style="display: inline-block;width:18%;text-align: center">' + $(".insertafter" + count + " td:nth-child(4) input").val() + '</span>' +
-            '<span style="display: inline-block;width:15%;text-align: center">' + $(".insertafter" + count + " td:nth-child(5) input").val() + '</span>' +
-            '<span style="display: inline-block;width:19%;text-align: right">' + commaSeperated($(".insertafter" + count + " td:nth-child(6) input").val()) + '</span>' +
-            '</div>');
-    }
 
     mywindow.document.write('<div style="margin-top: 10px;letter-spacing: 2px;border-top: 1px solid black"><span>भाड़ा</span><span style="margin-left: 5%">' + commaSeperated(netfare) + '</span></div>');
     mywindow.document.write('<div style="margin-top: 10px;letter-spacing: 1.5px;border-top: 1px solid black"><span>कुल वज़न</span><span style="margin-left: 4%">' + netWeight + '</span><span style="margin-left: 4%">कुल राशि</span><span style="margin-left: 4%">' + commaSeperated(netAmount) + '</span></div>');
