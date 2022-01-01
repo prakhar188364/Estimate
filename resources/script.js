@@ -7,7 +7,6 @@ function addItem() {
 
     var counter = new Date().getMilliseconds();
     counter = counter++;
-
     var lastitemappend = `<tr class="lastItem">
                             <td></td>
                             <td></td>
@@ -46,7 +45,6 @@ function addItem() {
 
     autocomplete(document.getElementById(`${"item" + counter}`), varity);
 
-
 }
 
 
@@ -59,7 +57,6 @@ $(document).ready(function () {
         $(".additem").attr("disabled", false);
         e.preventDefault();
     });
-
 
     $(document.body).on('blur', ".autocomplete input", function (e) {
         var txt = $(this).attr('data-name');
@@ -76,7 +73,6 @@ $(document).ready(function () {
             }
 
         }, 100);
-
         e.preventDefault();
     });
 
@@ -104,7 +100,6 @@ $(document).ready(function () {
         if ($(this).find(".total").val() > 0) {
             $(".additem").attr("disabled", false);
         }
-
         e.preventDefault();
     });
 
@@ -148,7 +143,6 @@ function printfn() {
             '</div>';
     }
 
-
     var mywindow = window.open('', 'PRINT', 'height=400,width=600');
 
     mywindow.document.write('<html><head></head>');
@@ -164,7 +158,6 @@ function printfn() {
         '<span style="display: inline-block;width:19%;text-align: right">टोटल</span>' +
         '</div>');
     mywindow.document.write(tablehtml);
-
 
     mywindow.document.write('<div style="margin-top: 10px;letter-spacing: 2px;border-top: 1px solid black"><span>भाड़ा</span><span style="margin-left: 5%">' + commaSeperated(netfare) + '</span></div>');
     mywindow.document.write('<div style="margin-top: 10px;letter-spacing: 1.5px;border-top: 1px solid black"><span>कुल वज़न</span><span style="margin-left: 4%">' + netWeight + '</span><span style="margin-left: 4%">कुल राशि</span><span style="margin-left: 4%">' + commaSeperated(netAmount) + '</span></div>');
