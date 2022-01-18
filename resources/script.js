@@ -41,7 +41,7 @@ function addItem() {
         $(cell1).insertBefore(".lastItem");
     }
 
-    $(".additem").attr("disabled", true);
+    //$(".additem").attr("disabled", true);
 
     autocomplete(document.getElementById(`${"item" + counter}`), varity);
 
@@ -147,7 +147,7 @@ function printfn() {
 
     mywindow.document.write('<html><head></head>');
 
-    mywindow.document.write('<body style="font-size: 12px; font-weight: bold;width: 71mm">');
+    mywindow.document.write('<body style="font-size: 12px; font-weight: bold;width: 72mm">');
     mywindow.document.write('<div>');
     mywindow.document.write('<div>' +
         '<span style="display: inline-block;width:25%;text-align: left">आइटम</span>' +
@@ -160,7 +160,7 @@ function printfn() {
     mywindow.document.write(tablehtml);
 
     mywindow.document.write('<div style="margin-top: 10px;letter-spacing: 2px;border-top: 1px solid black"><span>भाड़ा</span><span style="margin-left: 5%">' + commaSeperated(netfare) + '</span></div>');
-    mywindow.document.write('<div style="margin-top: 10px;letter-spacing: 1.5px;border-top: 1px solid black"><span>कुल वज़न</span><span style="margin-left: 4%">' + netWeight + '</span><span style="margin-left: 4%">कुल राशि</span><span style="margin-left: 4%">' + commaSeperated(netAmount) + '</span></div>');
+    mywindow.document.write('<div style="font-size:14px; margin-top: 10px;letter-spacing: 1.5px;border-top: 1px solid black"><span>कुल वज़न</span><span style="margin-left: 4%">' + netWeight + '</span><span style="margin-left: 4%">कुल राशि</span><span style="margin-left: 4%">' + commaSeperated(netAmount) + '</span></div>');
     mywindow.document.write('<div>');
     mywindow.document.write('</body></html>');
 
@@ -176,4 +176,3 @@ function printfn() {
 function commaSeperated(netNumber) {
     return new Intl.NumberFormat('en-IN', {maximumSignificantDigits: 10}).format(netNumber);
 }
-
